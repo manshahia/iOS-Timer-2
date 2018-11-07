@@ -48,7 +48,7 @@ class ViewController: UIViewController {
             
             print("Timer countdown \(self.time)")
             
-            if self.time == 0
+            if self.time <= 0
             {
                 self.timer.invalidate()
             }
@@ -61,7 +61,11 @@ class ViewController: UIViewController {
     
     
     @IBAction func removeTenSeconds(_ sender: Any) {
-        updateTime(time: -10)
+        if !(time < 10)
+        {
+                updateTime(time: -10)
+        }
+        
     }
     
     @IBAction func resetPressed(_ sender: Any) {
